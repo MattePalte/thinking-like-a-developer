@@ -1,0 +1,8 @@
+*_checkpoints
+data/precomputed_model_prediction
+data/processed_human_attention
+data/user_info
+data/data.zip
+data/README.md
+
+**/__pycache__
