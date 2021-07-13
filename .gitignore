@@ -5,4 +5,9 @@ data/user_info
 data/data.zip
 data/README.md
 
+
+node_modules
+
 **/__pycache__
+
+target/*

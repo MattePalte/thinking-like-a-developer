@@ -1,0 +1,27 @@
+{
+  "name": "xaioncode",
+  "version": "1.0.0",
+  "description": "Tool to evaluate explainable Artificial Intelligence (XAI) for model of code",
+  "main": "app.js",
+  "dependencies": {
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "js-yaml": "^4.0.0",
+    "mongodb": "^3.6.3"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^2.10.3",
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "s": "nodemon app.js"
+  },
+  "author": "Matteo Paltenghi",
+  "license": "ISC"
+}

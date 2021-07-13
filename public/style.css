@@ -1,0 +1,112 @@
+.pagecenter {
+    width: 700px;
+    height: 500px;
+    color: white;
+    border: 7px solid #fff;
+    background-color: #fa7d00;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    margin: auto;
+}
+
+.centeredsubElements {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.guidetext {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.guidetext input {
+  margin: 10px;
+  font-size: 20px;
+}
+
+
+body {
+  background-color: rgb(85, 84, 84);
+}
+
+.imageicon {
+  height:150px;
+  margin:10px
+}
+
+.imageicon img {
+  height:150px;
+}
+
+.guideline-description {
+  font-size: 16px;
+  text-align: left;
+}
+
+.button {
+  border: 3px solid #000000;
+  background-color: #ffffff;
+  color: black;
+  display:inline-block;
+  padding: 10px;
+}
+
+#rate-box {
+  margin: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+div.stars {
+  /*width: 400px;*/
+  height: 70px;
+  display: inline-block;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px solid #000000;
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f0e7';
+  color: #F62;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #F62;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f0e7';
+  font-family: FontAwesome;
+}
+
+label.descriptor {
+  float:right;
+  color: black;
+  font-size: 20px;
+  margin: 8px;
+}

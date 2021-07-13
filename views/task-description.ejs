@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="pagecenter centeredsubElements">
+        <div class="guidetext">
+            <div class="imageicon">
+                <img src="/images/developer_couple.png"/>
+            </div>
+            <h2 style="margin-top:0">Task: Function Naming</h2>
+            <div class="guideline-description">
+                <ol>
+                    <%
+                    arrayOfLines = guideline.match(/[^\r\n]+/g);
+                    for (let i = 0; i < arrayOfLines.length; i++) {
+                        line = arrayOfLines[i];
+                    %><li><%= line %></li><%
+                } %>
+                <li>(You will be able to read these guidelines also during the experiment.)</li>
+                </ol>
+            </div>
+            <form action="/experiment" method="get">
+                <input type="submit" value="I have read this important points. Start.">
+            </form>
+            <p style="font-size:12px">v<%= toolVersion %></p>
+        </div>
+
+    </div>
+    <div style="font-size:12px; position:absolute; left:0; color:black; bottom:0; margin: 8px;">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="pagecenter centeredsubElements">
+        <div class="guidetext">
+            <img class="imageicon" src="/images/developer_couple.png"/>
+            <h1 style="margin-top:0">Congratulations! </h1>
+            <p>Task Completed!</p>
+            <!--<p><%= correctAnswers %> out of <%= totalAnswers %></p>-->
+            <p>Copy and paste your code back into Amazon Mechanical Turk:</p>
+            <form>
+                <input type="text" id="codeField" value="<%= randomCode %>" readonly>
+                <button style='font-size:20px' onclick="copyInClipboard()">Copy code</button>
+            </form>
+            <p style="font-size:12px">v<%= toolVersion %></p>
+        </div>
+    <script type="text/javascript">
+    function copyInClipboard() {
+        /* Get the text field */
+        var copyText = document.getElementById("codeField");
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        /* Alert the copied text */
+        alert("Code copied in your clipboard: " + copyText.value);
+        }
+    </script>
+
+    </div>
+    <div style="font-size:12px; position:absolute; left:0; color:black; bottom:0; margin: 8px;">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</body>
+
+</html>

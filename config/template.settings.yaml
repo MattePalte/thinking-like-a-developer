@@ -1,0 +1,40 @@
+# CONFIGURATION FILE
+# AUTHOR: Matteo Paltenghi
+# NB: rename this file settings.yaml to make it effective
+
+# DATABASE
+# Open an Atlas MongoDB account and put here the credentials
+# https://docs.atlas.mongodb.com/getting-started
+mongodb_atlas:
+  endpoint: '<your_endpoint>'
+  username: '<your_username>'
+  password: '<your_password>'
+  database: attentions
+  collection: 'exp_demo'
+  collection_delivery: 'delivery_demo'
+  collection_rating: 'rating_demo'
+
+version: 0.4.0
+
+n_questions_per_experiment: 20
+
+javascript_client: 'script-light.js'
+# The following code is the same as above in script-light.js but with the
+# obfuscation enabled.
+# javascript_client: 'deobfuscation-requires-more-than-20-min-work.js'
+
+dataset:
+  folder: 'data/datasets/methods_showed_to_original_participants/'  # end with a slash
+  # number of minutes to wait before we repropose the same experiment set of 20
+  # functions to another participants (we assume that the task was quit).
+  lock_time_per_experiment: 120
+
+utils:
+  tmp_download_folder: 'data/datasets/download_folder/'
+
+guideline:
+  task_function_naming: |
+    INSPECT CODE: You will see the code belonging to one Java method's body (no signature and no arguments).
+    PICK THE CORRECT NAME: You have to guess the correct method name picking one among 7 alternatives.
+    MOVE THE MOUSE ON TOKENS: the code words are blurred and the alternatives method names are hidden. You have to move your mouse over the words to unblurr them.
+    CLICK ON IMPORTANT TOKENS: you can permanently unblurr words of your choice in the source code area by clicking on them. Click them again to blurr them again. Before submitting your answer, make sure only relevant tokens are highlighted.

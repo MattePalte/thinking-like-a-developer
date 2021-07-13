@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="pagecenter centeredsubElements">
+        <div class="guidetext">
+            <div class="imageicon">
+                <img src="/images/developer_couple.png"/>
+            </div>
+            <h2 style="margin-top:0">How difficult was the previous question?</h2>
+            <div class="guideline-description" style='background-color: white'>
+                <div id="rate-box">
+                        <form action="/rate-difficulty" method="post">
+                        <!--https://www.cssscript.com/simple-5-star-rating-system-with-css-and-html-radios/-->
+
+                            <input type="hidden" name="fileindex" value="<%= positionOfFile %>">
+                            <div class="stars">
+                                <label class="descriptor">Hard</label>
+                                <input class="star star-5" id="star-5" type="radio" name="rating" value='5'/>
+                                <label class="star star-5" for="star-5"></label>
+                                <input class="star star-4" id="star-4" type="radio" name="rating" value='4'/>
+                                <label class="star star-4" for="star-4"></label>
+                                <input class="star star-3" id="star-3" type="radio" name="rating" value='3'/>
+                                <label class="star star-3" for="star-3"></label>
+                                <input class="star star-2" id="star-2" type="radio" name="rating" value='2'/>
+                                <label class="star star-2" for="star-2"></label>
+                                <input class="star star-1" id="star-1" type="radio" name="rating" value='1'/>
+                                <label class="star star-1" for="star-1"></label>
+                                <label class="descriptor">Easy</label>
+                            </div>
+                            <br>
+                        <input type="submit" value="Confirm">
+                        </form>
+                </div>
+            </div>
+            <p style="font-size:12px">v<%= toolVersion %></p>
+        </div>
+
+    </div>
+    <div style="font-size:12px; position:absolute; left:0; color:black; bottom:0; margin: 8px;">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</body>
+</html>

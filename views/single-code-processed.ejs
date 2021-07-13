@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style-light.css">
+</head>
+<body onselectstart="return false">
+    <div id="nicknamebox"><%= nickname %></div>
+    <div id="navbar">
+        <div class="container">
+            <div id="title-info"><span id="file-index"><%= positionOfFile %></span><span id="uuid"><%= uuid %></span></div>
+            <div id="buttonbox">
+
+            </div>
+
+            <div id="selectionbox">
+                <h2>Inspect the code and select the correct method name:</h2>
+
+                <p id='sub-guideline'><!--<%= correctAnswers %>/20 correct answers and <%= wrongAnswers %>/20 mistakes.-->
+                    <div class="tooltip">View guidelines.
+                        <span class="tooltiptext">
+                            <ol>
+                                <%
+                                arrayOfLines = guideline.match(/[^\r\n]+/g);
+                                for (let i = 0; i < arrayOfLines.length; i++) {
+                                    line = arrayOfLines[i];
+                                %><li><%= line %></li><%
+                            } %>
+                            </ol>
+                        </span>
+                    </div> <div id="experiment_status"></div> <div id="xhr_status"></div>
+                </p>
+                <ol id="alternative-list">
+                    <% for (let i = 0; i < optionsFunctionNames.length; i++) { %>
+                    <li>
+                        <div class="li-option-element send-log-option">
+                            <div class="placeholderoption"></div>
+                            <div class="optionbutton"><%= optionsFunctionNames[i] %></div>
+                            <div ></div>
+                        </div>
+                    </li>
+                    <% } %>
+                </ol>
+            </div>
+        </div>
+        <div id="progressbar" style="width: <%= progress %>%"><%= positionOfFile + 1 %></div>
+    </div>
+    <!-- style="white-space: pre;" -->
+    <!-- var tokens = line.split(/(\s+)/).filter( function(e) { return e.trim().length > 0; } );; -->
+    <div id="codebox" style="white-space: pre;"><%
+        let x = 0
+        let y = 0
+        for (let i = 0; i < tokens.length; i++) {
+            let t = tokens[i];
+            // insert new lines if we are on a different line
+            while (y < t.line) {
+                %>
+<%              // add new line
+                y += 1;
+                x = 0;
+            }
+            // print spaces after the previous token
+            // and before the current one
+            while (x < t.start_char) {
+                %> <% // add space
+                x +=1;
+            }
+            %><span
+            class="<%= tokenClass %>"
+            id="token_<%= t['index_id'] %>""
+            id4identifier="token_<%= t['token_group'] %>"
+            line="<%= t['line'] %>"
+            charStart="<%= t['start_char'] %>"
+            onClick="tokenPress(this.id)"><%= t.text %></span><%
+            if (t.text) {
+                x += t.text.length;
+            }
+        }%>
+
+    </div>
+    <div id="loader_placeholder"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.5/platform.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="<%= javascript_client %>"></script>
+</html>

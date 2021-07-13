@@ -103,7 +103,7 @@ class Aligner(object):
         start_line = 0  # skip the function declaration
         print('_augment_tokens: ', id_same_identifier_list)
         for i, (id_same_identifier, t) in enumerate(zip(id_same_identifier_list, filtered_original_tokens)):  # noqa
-        # for i, t in enumerate(filtered_original_tokens):
+            # for i, t in enumerate(filtered_original_tokens):
             if verbose:
                 logger.debug('*' * 50)
             if verbose:

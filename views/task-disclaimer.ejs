@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="pagecenter centeredsubElements">
+        <div class="guidetext">
+            <div class="imageicon">
+                <img src="/images/developer_couple.png"/>
+            </div>
+            <h2 style="margin-top:0">Last Two Important WARNINGs</h2>
+            <div class="guideline-description">
+                <ul>
+                    <li>Proceed ONLY IF the next two token are visible (token_1) and blurred and completely unreadable (token_2):
+                        <ol>
+                            <li>token_1</li>
+                            <li><span style="color: transparent; text-shadow: 0 0 7px rgba(0,0,0,0.5);">token_2</span></li>
+                        </ol>
+                    </li>
+                    <li>NEVER REFRESH the page during the experiment.</li>
+                    <li>SOLUTION: If you can see the blurred token, please try one of the following:
+                        <ol>
+                            <li>Update your browser</li>
+                            <li>Use a different browser (Chrome or Firefox)</li>
+                            <li>Try with a different PC (ask to a friend)</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <form action="/experiment" method="get">
+                <input type="submit" value="I see the blurred and unreadable token.">
+            </form>
+            <p style="font-size:12px">v<%= toolVersion %></p>
+        </div>
+
+    </div>
+    <div style="font-size:12px; position:absolute; left:0; color:black; bottom:0; margin: 8px;">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</body>
+</html>
