@@ -17,6 +17,10 @@ This publication involves two level of reproducibility:
     You can use our *Human Reasoning Recorder* web interface to submit a series of task to a crowd of participants (remote participation allowed, such as Amazon Mechanical Turk) and collect the results on how developers perform the task. The web environment let the participants inspect only code under the mouse pointer such that the mouse trace can approximate the attention of the human, in a similar way to use of fixation time in expensive eye-tracking experiment.
 
 
+![Experiment Overview](images/experiment_overview.png)
+
+
+
 ## 1. Comparative Study: Neural models versus human attention
 
 To reproduce this study, follow these steps:
