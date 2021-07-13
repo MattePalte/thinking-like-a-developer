@@ -17,7 +17,7 @@ This publication involves two level of reproducibility:
     You can use our *Human Reasoning Recorder* web interface to submit a series of task to a crowd of participants (remote participation allowed, such as Amazon Mechanical Turk) and collect the results on how developers perform the task. The web environment let the participants inspect only code under the mouse pointer such that the mouse trace can approximate the attention of the human, in a similar way to use of fixation time in expensive eye-tracking experiment.
 
 
-## Comparative Study: Neural models versus human attention
+## 1. Comparative Study: Neural models versus human attention
 
 To reproduce this study, follow these steps:
 1. clone this repo;
@@ -35,16 +35,16 @@ For completeness we also provide you with our trained models:
 1. Model 2 (Transformer-based): https://doi.org/10.6084/m9.figshare.14431439
 
 You can see our output predictions of the model as raw data here: https://doi.org/10.6084/m9.figshare.14452590.
-Then to get the processed version of the model prediction in a way they are suitable for the comparative study you can use the `scripts/process_raw_human_logs.py` to preprocess raw data using respectively the functions `praparetransformer` and `prapareextsummarizer`.
+Then to get the processed version of the model prediction in a way they are suitable for the comparative study you can use the `scripts/process_raw_human_logs.py` to preprocess raw data using respectively the functions `praparetransformer` and `prapareextsummarizer`. Follow the given the relative `scripts/README.md` instructions.
 
-## Empirical Study
+## 2. Empirical Study
 
 To reproduce this empirical study or to deploy and run the *Human Reasoning Recorder* on your machine use.
 
 For the empirical study, we have the following sequence of operations to apply, which are represented by jupyter notebooks, and data, which are the input and output of such steps.
 1. **dataset with precomputed experiment set**: we group in a single JSON file the methods to be shown to a single participants along with all the necessary information. The dataset contains multiple of these JSON files, and it is built in such a way that the same method is proposed to 5 different users. In folder `data/datasets/methods_showed_to_original_participants` you can find the JSON files that we proposed to our participants, our survey did not deliver all those set but only the first part.
 1. **Setup the Human Reasoning Recorder**: for the installation of the *Human Reasoning Recorder* you can follow the steps in the `INSTALL.md` file.
-1. **processing of raw participants logs**: this downloads the data from the MongoDB database and processes them. Follow the `scripts/process_raw_human_logs.py` to download and preprocess raw data using respectively the functions `download` and `preparehuman`. For raw data of participants log of our empirical study are available here: https://doi.org/10.6084/m9.figshare.14452590.
+1. **processing of raw participants logs**: this downloads the data from the MongoDB database and processes them. Follow the `scripts/process_raw_human_logs.py` to download and preprocess raw data using respectively the functions `download` and `preparehuman`. For raw data of participants log of our empirical study are available here: https://doi.org/10.6084/m9.figshare.14452590. Follow the given the relative `scripts/README.md` instructions.
 1. **filtering**: given the number of correct answers by each participant, assign it a probability of coming from a random guesser. If this probability is high it will be rejected in the comparative study part. You can reproduce this step by following the notebook: `Filtering_Random_Guesser_Computation.ipynb`.
 This is producing the `data/user_info/users_evaluation.csv` file used in the comparative study.
 
