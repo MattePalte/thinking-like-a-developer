@@ -3,6 +3,8 @@
 Related research publication:
 "Thinking Like a Developer? Comparing the Attention of Humans with Neural Models of Code", *conditionally accepted at ASE '21*, Matteo Paltenghi, Michael Pradel
 
+[View paper](paper.pdf)
+
 ## Reproducibility Levels and Target Audience
 This publication involves two levels of reproducibility:
 1. **Comparative Study: Neural Models versus Human Attention**: we compare the attention weights of two neural models with the collected human data. At this level, you can use the preprocessed human attention data from participants and the precomputed models' attention weights and re-create the figures of the paper.
@@ -63,6 +65,7 @@ We tested the following setup:
 - CPU: Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz
 - conda 4.10.1
 - Python 3.8.10
+- Java openjdk 11.0.11
 - RAM: 32 GB
 
 ### Training of Neural Models
