@@ -1,25 +1,50 @@
-# Instructions how to install the Software artifacts
+# Environment Preparation
 
-# Setup for Data Collection
+Regardless of the level of reproducibility you will need to prepare your environment with the following common steps:
+1. clone this repo:
+    ```bash
+    git clone https://github.com/sola-st/thinking-like-a-developer.git
+    ```
+1. make sure python 3 (we used Python 3.8) is installed, by running:
+    ```bash
+    python --version
+    ```
+    if not install it with:
+    ```bash
+    sudo apt install python3.8
+    ```
+1. from the main folder, install the dependencies of this analysis by running:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *Optional: we encourage you to use a virtual environment if possible: conda or venv;*
+1. download the data and place the unzipped content in the `data` folder of this repo: https://doi.org/10.6084/m9.figshare.14462052
+1. from the main folder of the repo, launch the Jupyter notebook instance
+    ```bash
+    jupyter notebook
+    ```
+1. From the browser page navigate to the [notebooks folder](notebooks) which contains important notebooks you will need in the following step.
 
-The system to collect human attention relies on three component:
-- the **web interface** of the *Human Reasoning Recorder* (written in NodeJS) that show the 20 method naming tasks to the participants. This interface is hosted on the free application instance from [Heroku](https://www.heroku.com/pricing)).
+
+# 1. Comparative Study: Neural Models versus Human Attention
+
+If you did the common steps in the previous paragraph your environment is ready, and the installation to reproduce the comparative study is completed. Move back to the [README.md](README.md) to reproduce the analysis.
+
+
+# 2. Empirical Study: Human Reasoning Recorder Deployment
+
+Before starting double check that you completed the previous common steps in the *Environment Preparation* paragraph above.
+
+The setup to collect human attention relies on three component:
+- the **web interface** of the *Human Reasoning Recorder (HRR)* (written in NodeJS) that show the 20 method naming tasks to the participants. This interface is hosted on the free application instance from [Heroku](https://www.heroku.com/pricing)).
 - the **database** containing the actual collected data and the info on which experiment set has been delivered to the user (hosted on a free instance of [MongoDB Cloud](https://www.mongodb.com/pricing))
 - (OPTIONAL) the **Amazon Mechanical Turk** for [requester account](https://www.heroku.com/pricing). Here we recruit participants and validate those that send us a valid submission. <ins>Note that this is the only part that needs investment, so we invest money only on real data not on infrastructure maintenance since we use free resources.</ins>.
-
-# Human Reasoning Recorder Deployment
 
 To deploy this tool for a software engineering experiment you need:
 - an Heroku account (FREE)
 - a mongodb account (FREE)
 
 Heroku will host our application, whereas MongoDB will host our NoSql Database to store the logs of the participants.
-
-## Clone the repository
-Clone this repository in your local machine:
-```bash
-git clone https://github.com/...
-```
 
 ## Install Heroku CLI
 Follow these steps:
@@ -39,7 +64,7 @@ Go to the folder where you cloned the project and open the CLI there:
     ```code
     heroku create <app_name_you_want_it_to_be>
     ```
-1. Add a new heroku remote. In this project CLI:
+1. Add a new heroku remote. Go to the folder where you cloned this project andn run:
     ```code
     git remote add heroku https://git.heroku.com/<app_name_you_want_it_to_be>.git
     ```
@@ -80,7 +105,7 @@ If you used the default configuration, the JSON files in the folder `data/datase
 In this step, we add records to the mongodb database to let it know that heroku has new experiment sets to show to participants.
 
 
-Open and run the following notebook: `notebooks/Uplaod_Available_Experiment_Sets.ipynb`.
+Open and run the following notebook top to bottom: `notebooks/Uplaod_Available_Experiment_Sets.ipynb`.
 
 
 # Open the interface
@@ -136,7 +161,7 @@ Remember that the platform is fully customizable: the task can be changed accord
 - ask your code related question
 - propose your custom list of options
 - provide a code snippet (and the tokenization that you want)
-- provide a custom after task question with a grading scale
+- provide a custom *"after task"* question with a grading scale
 
 The platform will record the answers of the user together with all the events with a timestamp (e.g. mouse over token, clicked tokens, mouse over alternative) to let you perform your custom analysis and answer your research questions.
 
