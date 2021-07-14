@@ -15,7 +15,7 @@ Regardless of the level of reproducibility you will need to prepare your environ
     ```
 1. from the main folder, install the dependencies of this analysis by running:
     ```bash
-    pip install -r requirements.txt
+    pip install -r reqs.txt
     ```
     *Optional: we encourage you to use a virtual environment if possible: conda or venv;*
 1. download the data and place the unzipped content in the `data` folder of this repo: https://doi.org/10.6084/m9.figshare.14462052
